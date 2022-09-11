@@ -174,9 +174,9 @@ export default {
 			filters: {},
 			submitted: false,
 			statuses: [
-				{label: 'INSTOCK', value: 'instock'},
-				{label: 'LOWSTOCK', value: 'lowstock'},
-				{label: 'OUTOFSTOCK', value: 'outofstock'}
+				{label: 'ACTIVE', value: 'active'},
+				{label: 'INACTIVE', value: 'inactive'},
+				{label: 'NOTAVAILABLE', value: 'notavailable'}
 			]
 		}
 	},

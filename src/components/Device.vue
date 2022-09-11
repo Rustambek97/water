@@ -31,13 +31,13 @@
 					</template>
 
 					<Column selectionMode="multiple" headerStyle="width: 3rem"></Column>
-					<Column field="code" header="Device name" :sortable="true" headerStyle="width:14%; min-width:10rem;">
+					<Column field="name" header="Device name" :sortable="true" headerStyle="width:14%; min-width:10rem;">
 						<template #body="slotProps">
 							<span class="p-column-title">Name</span>
 							{{slotProps.data.name}}
 						</template>
 					</Column>
-					<Column header="Device Image" headerStyle="width:14%; min-width:10rem;">
+					<Column field="Image" header="Device Image" headerStyle="width:14%; min-width:10rem;">
 						<template #body="slotProps">
 							<span class="p-column-title">Image</span>
 							<img :src="'images/product/' + slotProps.data.image" :alt="slotProps.data.image" class="shadow-2" width="100" />
@@ -215,9 +215,9 @@ export default {
 			filters: {},
 			submitted: false,
 			statuses: [
-				{label: 'INSTOCK', value: 'instock'},
-				{label: 'LOWSTOCK', value: 'lowstock'},
-				{label: 'OUTOFSTOCK', value: 'outofstock'}
+				{label: 'ACTIVE', value: 'active'},
+				{label: 'INACTIVE', value: 'inactive'},
+				{label: 'NOTAVAILABLE', value: 'notavailable'}
 			]
 		}
 	},

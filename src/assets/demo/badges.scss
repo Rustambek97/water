@@ -49,17 +49,17 @@
     font-size: 12px;
     letter-spacing: .3px;
 
-    &.status-instock {
+    &.status-active {
         background: #C8E6C9;
         color: #256029;
     }
 
-    &.status-outofstock {
+    &.status-inactive {
         background: #FFCDD2;
         color: #C63737;
     }
 
-    &.status-lowstock {
+    &.status-notavailable {
         background: #FEEDAF;
         color: #8A5340;
     }
