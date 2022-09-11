@@ -1,0 +1,32 @@
+{
+	"data": [
+		{
+			"id": "1000",
+			"name": "man git",
+			"data": "05.11.2022",
+			"inventoryStatus": "INSTOCK",
+			"createdat": "01.01.2022"
+		},
+		{
+			"id": "1001",
+			"name": "man git",
+			"data": "05.11.2022",
+			"inventoryStatus": "INSTOCK",
+			"createdat": "01.01.2022"
+		},
+		{
+			"id": "1002",
+			"name": "man git",
+			"data": "05.11.2022",
+			"inventoryStatus": "INSTOCK",
+			"createdat": "01.01.2022"
+		},
+		{
+			"id": "1003",
+			"name": "man git",
+			"data": "05.11.2022",
+			"inventoryStatus": "INSTOCK",
+			"createdat": "01.01.2022"
+		}
+	]
+}

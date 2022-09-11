@@ -11,35 +11,37 @@
 						</div>
 					</template>
 					<Column :expander="true" headerStyle="width: 3rem" />
-					<Column field="name" header="Name" :sortable="true">
+					<Column field="name" header="Device Name" :sortable="true">
 						<template #body="slotProps">
 							{{slotProps.data.name}}
 						</template>
 					</Column>
-					<Column header="Image">
+					<Column field="price" header="Battarey" :sortable="true">
 						<template #body="slotProps">
-							<img :src="'images/product/' + slotProps.data.image" :alt="slotProps.data.image" class="shadow-2" width="100" />
+							{{(slotProps.data.battarey)}}
 						</template>
 					</Column>
-					<Column field="price" header="Price" :sortable="true">
+					<Column field="price" header="Signal" :sortable="true">
 						<template #body="slotProps">
-							{{formatCurrency(slotProps.data.price)}}
+							{{(slotProps.data.signal)}}
 						</template>
 					</Column>
-					<Column field="category" header="Category" :sortable="true">
-					<template #body="slotProps">
-							{{formatCurrency(slotProps.data.category)}}
-						</template></Column>
-					<Column field="rating" header="Reviews" :sortable="true">
+					<Column field="price" header="Volume" :sortable="true">
 						<template #body="slotProps">
-							<Rating :modelValue="slotProps.data.rating" :readonly="true" :cancel="false" />
+							{{(slotProps.data.volume)}}
 						</template>
 					</Column>
-					<Column field="inventoryStatus" header="Status" :sortable="true">
+					<Column field="category" header="CreatedAt" :sortable="true">
 						<template #body="slotProps">
-							<span :class="'product-badge status-' + (slotProps.data.inventoryStatus ? slotProps.data.inventoryStatus.toLowerCase() : '')">{{slotProps.data.inventoryStatus}}</span>
+							{{(slotProps.data.category)}}
 						</template>
 					</Column>
+					<Column field="category" header="Accounted" :sortable="true">
+						<template #body="slotProps">
+							{{(slotProps.data.accounted)}}
+						</template>
+					</Column>
+					
 					<template #expansion="slotProps">
 						<div class="p-3">
 							<h5>Orders for {{slotProps.data.name}}</h5>

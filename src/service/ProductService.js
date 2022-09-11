@@ -19,8 +19,8 @@ export default class ProductService {
 	getProducts() {
 		return fetch('data/products.json').then(res => res.json()).then(d => d.data);
     }
-	getGits() {
-		return fetch('data/gits.json').then(res => res.json()).then(d => d.data);
+	getSetting() {
+		return fetch('data/setting.json').then(res => res.json()).then(d => d.data);
     }
 
     getProductsWithOrdersSmall() {

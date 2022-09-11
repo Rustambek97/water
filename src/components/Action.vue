@@ -11,33 +11,24 @@
 						</div>
 					</template>
 					<Column :expander="true" headerStyle="width: 3rem" />
-					<Column field="name" header="Name" :sortable="true">
+					<Column field="username" header="Username" :sortable="true">
 						<template #body="slotProps">
 							{{slotProps.data.name}}
 						</template>
 					</Column>
-					<Column header="Image">
+					<Column field="data" header="Data" :sortable="true">
 						<template #body="slotProps">
-							<img :src="'images/product/' + slotProps.data.image" :alt="slotProps.data.image" class="shadow-2" width="100" />
+							{{slotProps.data.data}}
 						</template>
 					</Column>
-					<Column field="price" header="Price" :sortable="true">
+					<Column field="saved" header="Saved" :sortable="true">
 						<template #body="slotProps">
-							{{formatCurrency(slotProps.data.price)}}
+							{{slotProps.data.saved}}
 						</template>
 					</Column>
-					<Column field="category" header="Category" :sortable="true">
-					<template #body="slotProps">
-							{{formatCurrency(slotProps.data.category)}}
-						</template></Column>
-					<Column field="rating" header="Reviews" :sortable="true">
+					<Column field="createdat" header="CreatedAt" :sortable="true">
 						<template #body="slotProps">
-							<Rating :modelValue="slotProps.data.rating" :readonly="true" :cancel="false" />
-						</template>
-					</Column>
-					<Column field="inventoryStatus" header="Status" :sortable="true">
-						<template #body="slotProps">
-							<span :class="'product-badge status-' + (slotProps.data.inventoryStatus ? slotProps.data.inventoryStatus.toLowerCase() : '')">{{slotProps.data.inventoryStatus}}</span>
+							{{slotProps.data.createdat}}
 						</template>
 					</Column>
 					<template #expansion="slotProps">
