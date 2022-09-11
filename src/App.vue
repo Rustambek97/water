@@ -37,18 +37,18 @@ export default {
 				{
 					label: 'Services', icon: 'pi pi-fw pi-sitemap',
 					items: [
-						{label: 'Device', icon: 'pi pi-globe', to: '/',},
-						{label: 'Logdevice', icon: 'pi pi-key', to: '/logdevice',},
-                        {label: "Action", icon: "pi pi-map-marker", to: "/action",},
-                        {label: "Setting", icon: "pi pi-map-marker", to: "/setting",},
-                        {label: "Volume", icon: "pi pi-map-marker", to: "/volume",},
+						{label: 'Device', icon: 'pi pi-building', to: '/',},
+						{label: 'Logdevice', icon: 'pi pi-sitemap', to: '/logdevice',},
+                        {label: "Action", icon: "pi pi-slack", to: "/action",},
+                        {label: "Setting", icon: "pi pi-cog", to: "/setting",},
+                        {label: "Volume", icon: "pi pi-chart-bar", to: "/volume",},
 					]
 				},
                 {
                     label: 'Manage', icon: 'pi pi-fw pi-sitemap',
 					items: [
-                        {label: "Regions and Kanals", icon: "pi pi-map-marker", to: "/regions",},
-                        {label: "Users", icon: "pi pi-map-marker", to: "/users",},
+                        {label: "Regions and Kanals", icon: "pi pi-flag", to: "/regions",},
+                        {label: "Users", icon: "pi pi-user-edit", to: "/users",},
 					]
                 },
             ]

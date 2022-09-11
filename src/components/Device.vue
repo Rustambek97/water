@@ -31,6 +31,12 @@
 					</template>
 
 					<Column selectionMode="multiple" headerStyle="width: 3rem"></Column>
+					<Column headerStyle="min-width:10rem;">
+						<template #body="slotProps">
+							<Button icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" @click="editProduct(slotProps.data)" />
+							<Button icon="pi pi-trash" class="p-button-rounded p-button-warning mt-2" @click="confirmDeleteProduct(slotProps.data)" />
+						</template>
+					</Column>
 					<Column field="name" header="Device name" :sortable="true" headerStyle="width:14%; min-width:10rem;">
 						<template #body="slotProps">
 							<span class="p-column-title">Name</span>
@@ -49,63 +55,58 @@
 							<span :class="'product-badge status-' + (slotProps.data.inventoryStatus ? slotProps.data.inventoryStatus.toLowerCase() : '')">{{slotProps.data.inventoryStatus}}</span>
 						</template>
 					</Column>
-					<Column field="name" header="Battarey" :sortable="true" headerStyle="width:14%; min-width:10rem;">
+					<Column field="battarey" header="Battarey" :sortable="true" headerStyle="width:14%; min-width:10rem;">
 						<template #body="slotProps">
 							<span class="p-column-title">battarey</span>
 							{{slotProps.data.battarey}}
 						</template>
 					</Column>
-					<Column field="price" header="Signal" :sortable="true" headerStyle="width:14%; min-width:8rem;">
+					<Column field="signal" header="Signal" :sortable="true" headerStyle="width:14%; min-width:8rem;">
 						<template #body="slotProps">
 							<span class="p-column-title">Signal</span>
 							{{slotProps.data.signal}}
 						</template>
 					</Column>
-					<Column field="price" header="Sensor" :sortable="true" headerStyle="width:14%; min-width:8rem;">
+					<Column field="sensor" header="Sensor" :sortable="true" headerStyle="width:14%; min-width:8rem;">
 						<template #body="slotProps">
 							<span class="p-column-title">Sensor</span>
 							{{(slotProps.data.sensor)}}
 						</template>
 					</Column>
-					<Column field="price" header="Stick" :sortable="true" headerStyle="width:14%; min-width:8rem;">
+					<Column field="stick" header="Stick" :sortable="true" headerStyle="width:14%; min-width:8rem;">
 						<template #body="slotProps">
 							<span class="p-column-title">Stick</span>
 							{{(slotProps.data.stick)}}
 						</template>
 					</Column>
-					<Column field="price" header="Uptime" :sortable="true" headerStyle="width:14%; min-width:8rem;">
+					<Column field="uptime" header="Uptime" :sortable="true" headerStyle="width:14%; min-width:8rem;">
 						<template #body="slotProps">
 							<span class="p-column-title">Uptime</span>
 							{{(slotProps.data.uptime)}}
 						</template>
 					</Column>
-					<Column field="price" header="Zapas" :sortable="true" headerStyle="width:14%; min-width:8rem;">
+					<Column field="zapas" header="Zapas" :sortable="true" headerStyle="width:14%; min-width:8rem;">
 						<template #body="slotProps">
 							<span class="p-column-title">Zapas</span>
 							{{(slotProps.data.zapas)}}
 						</template>
 					</Column>
-					<Column field="name" header="UpdateTime" :sortable="true" headerStyle="width:14%; min-width:10rem;">
+					<Column field="updatetime" header="UpdateTime" :sortable="true" headerStyle="width:14%; min-width:10rem;">
 						<template #body="slotProps">
 							<span class="p-column-title">UpdateTime</span>
 							{{slotProps.data.updatetime}}
 						</template>
 					</Column>
-					<Column field="name" header="CreatedAt" :sortable="true" headerStyle="width:14%; min-width:10rem;">
+					<Column field="createdat" header="CreatedAt" :sortable="true" headerStyle="width:14%; min-width:10rem;">
 						<template #body="slotProps">
 							<span class="p-column-title">CreatedAt</span>
 							{{slotProps.data.createdat}}
 						</template>
 					</Column>
-					<Column headerStyle="min-width:10rem;">
-						<template #body="slotProps">
-							<Button icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" @click="editProduct(slotProps.data)" />
-							<Button icon="pi pi-trash" class="p-button-rounded p-button-warning mt-2" @click="confirmDeleteProduct(slotProps.data)" />
-						</template>
-					</Column>
+					
 				</DataTable>
 
-				<Dialog v-model:visible="productDialog" :style="{width: '450px'}" header="Product Details" :modal="true" class="p-fluid">
+				<Dialog v-model:visible="productDialog" :style="{width: '450px'}" header="Device Data" :modal="true" class="p-fluid">
 					<img :src="'images/product/' + product.image" :alt="product.image" v-if="product.image" width="150" class="mt-0 mx-auto mb-5 block shadow-2" />
 					<div class="field">
 						<label for="name">Name</label>
@@ -113,12 +114,7 @@
 						<small class="p-invalid" v-if="submitted && !product.name">Name is required.</small>
 					</div>
 					<div class="field">
-						<label for="description">Description</label>
-						<Textarea id="description" v-model="product.description" required="true" rows="3" cols="20" />
-					</div>
-
-					<div class="field">
-						<label for="inventoryStatus" class="mb-3">Inventory Status</label>
+						<label for="inventoryStatus" class="mb-3">Device Status</label>
 						<Dropdown id="inventoryStatus" v-model="product.inventoryStatus" :options="statuses" optionLabel="label" placeholder="Select a Status">
 							<template #value="slotProps">
 								<div v-if="slotProps.value && slotProps.value.value">
@@ -133,37 +129,34 @@
 							</template>
 						</Dropdown>
 					</div>
-
-					<div class="field">
-						<label class="mb-3">Category</label>
-						<div class="formgrid grid">
-							<div class="field-radiobutton col-6">
-								<RadioButton id="category1" name="category" value="Accessories" v-model="product.category" />
-								<label for="category1">Accessories</label>
-							</div>
-							<div class="field-radiobutton col-6">
-								<RadioButton id="category2" name="category" value="Clothing" v-model="product.category" />
-								<label for="category2">Clothing</label>
-							</div>
-							<div class="field-radiobutton col-6">
-								<RadioButton id="category3" name="category" value="Electronics" v-model="product.category" />
-								<label for="category3">Electronics</label>
-							</div>
-							<div class="field-radiobutton col-6">
-								<RadioButton id="category4" name="category" value="Fitness" v-model="product.category" />
-								<label for="category4">Fitness</label>
-							</div>
-						</div>
-					</div>
-
 					<div class="formgrid grid">
 						<div class="field col">
-							<label for="price">Price</label>
-							<InputNumber id="price" v-model="product.price" mode="currency" currency="USD" locale="en-US" />
+							<label for="battarey">Battarey</label>
+							<InputNumber id="battarey" v-model="product.battarey" />
 						</div>
 						<div class="field col">
-							<label for="quantity">Quantity</label>
-							<InputNumber id="quantity" v-model="product.quantity" integeronly />
+							<label for="signal">Signal</label>
+							<InputNumber id="signal" v-model="product.signal"/>
+						</div>
+					</div>
+					<div class="formgrid grid">
+						<div class="field col">
+							<label for="sensor">Sensor</label>
+							<InputNumber id="sensor" v-model="product.sensor" />
+						</div>
+						<div class="field col">
+							<label for="stick">Stick</label>
+							<InputNumber id="stick" v-model="product.stick"/>
+						</div>
+					</div>
+					<div class="formgrid grid">
+						<div class="field col">
+							<label for="uptime">Uptime</label>
+							<InputNumber id="uptime" v-model="product.uptime" />
+						</div>
+						<div class="field col">
+							<label for="zapas">Zapas</label>
+							<InputNumber id="zapas" v-model="product.zapas"/>
 						</div>
 					</div>
 					<template #footer>

@@ -89,10 +89,6 @@
 						<InputText id="name" v-model.trim="product.name" required="true" autofocus :class="{'p-invalid': submitted && !product.name}" />
 						<small class="p-invalid" v-if="submitted && !product.name">Name is required.</small>
 					</div>
-					<div class="field">
-						<label for="description">Description</label>
-						<Textarea id="description" v-model="product.description" required="true" rows="3" cols="20" />
-					</div>
 
 					<div class="field">
 						<label for="inventoryStatus" class="mb-3">Inventory Status</label>
@@ -109,28 +105,6 @@
 								</span>
 							</template>
 						</Dropdown>
-					</div>
-
-					<div class="field">
-						<label class="mb-3">Category</label>
-						<div class="formgrid grid">
-							<div class="field-radiobutton col-6">
-								<RadioButton id="category1" name="category" value="Accessories" v-model="product.category" />
-								<label for="category1">Accessories</label>
-							</div>
-							<div class="field-radiobutton col-6">
-								<RadioButton id="category2" name="category" value="Clothing" v-model="product.category" />
-								<label for="category2">Clothing</label>
-							</div>
-							<div class="field-radiobutton col-6">
-								<RadioButton id="category3" name="category" value="Electronics" v-model="product.category" />
-								<label for="category3">Electronics</label>
-							</div>
-							<div class="field-radiobutton col-6">
-								<RadioButton id="category4" name="category" value="Fitness" v-model="product.category" />
-								<label for="category4">Fitness</label>
-							</div>
-						</div>
 					</div>
 
 					<div class="formgrid grid">
@@ -192,9 +166,9 @@ export default {
 			filters: {},
 			submitted: false,
 			statuses: [
-				{label: 'INSTOCK', value: 'instock'},
-				{label: 'LOWSTOCK', value: 'lowstock'},
-				{label: 'OUTOFSTOCK', value: 'outofstock'}
+				{label: 'ACTIVE', value: 'active'},
+				{label: 'INACTIVE', value: 'inactive'},
+				{label: 'NOTAVAILABLE', value: 'notavailable'}
 			]
 		}
 	},

@@ -1,0 +1,100 @@
+{
+	"data": [
+		{
+			"id": "1000",
+			"code": "f230fh0g3",
+			"name": "Khiva - Chilpik Kala - Nukus",
+			"description": "Travel Description",
+			"image": "31.Nukus.jpg",
+			"price": "From $34 to $229 for one car",
+			"category": "Accessories",
+			"quantity": 24,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "1001",
+			"code": "nvklal433",
+			"name": "Khiva - Three Castles - Nukus ",
+			"description": "Product Description",
+			"image": "32.Jampik kala.jpg",
+			"price": 72,
+			"category": "Accessories",
+			"quantity": 61,
+			"inventoryStatus": "INSTOCK",
+			"rating": 4
+		},
+		{
+			"id": "1002",
+			"code": "zz21cz3c1",
+			"name": "Khiva - Four Castles - Nukus ",
+			"description": "Product Description",
+			"image": "33.toprak-kala1.jpg",
+			"price": 79,
+			"category": "Fitness",
+			"quantity": 2,
+			"inventoryStatus": "LOWSTOCK",
+			"rating": 3
+		},
+		{
+			"id": "1003",
+			"code": "244wgerg2",
+			"name": "Khiva - Six Castles - Nukus ",
+			"description": "Product Description",
+			"image": "34.gyaur kala1.jpg",
+			"price": 29,
+			"category": "Clothing",
+			"quantity": 25,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		},
+		{
+			"id": "1004",
+			"code": "h456wer53",
+			"name": "Nukus- Chilpik Kala - Khiva",
+			"description": "Product Description",
+			"image": "35.Khiva1.jpg",
+			"price": 15,
+			"category": "Accessories",
+			"quantity": 73,
+			"inventoryStatus": "INSTOCK",
+			"rating": 4
+		},
+		{
+			"id": "1005",
+			"code": "av2231fwg",
+			"name": "Nukus- Four Castles - Khiva",
+			"description": "Product Description",
+			"image": "36.Qizil kala.jpg",
+			"price": 120,
+			"category": "Accessories",
+			"quantity": 0,
+			"inventoryStatus": "OUTOFSTOCK",
+			"rating": 4
+		},
+		{
+			"id": "1006",
+			"code": "bib36pfvm",
+			"name": "Nukus- Three Castles - Khiva",
+			"description": "Product Description",
+			"image": "37.Jampik kala.jpg",
+			"price": 32,
+			"category": "Accessories",
+			"quantity": 5,
+			"inventoryStatus": "LOWSTOCK",
+			"rating": 3
+		},
+		{
+			"id": "1007",
+			"code": "mbvjkgip5",
+			"name": "Nukus- Six Castles - Khiva",
+			"description": "Product Description",
+			"image": "38.Ayaz kala.jpg",
+			"price": 34,
+			"category": "Accessories",
+			"quantity": 23,
+			"inventoryStatus": "INSTOCK",
+			"rating": 5
+		}
+	]
+}
