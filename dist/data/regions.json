@@ -1,0 +1,40 @@
+{
+	"data": [
+		{
+			"id": "1000",
+			"name": "Urganch",
+			"image": "Urganch.jpg",
+			"cord_x": "42.3",
+			"cord_y": "62.4",
+			"inventoryStatus": "ACTIVE",
+			"createdat": "2022-08-29 10:03:56.634"
+		},
+		{
+			"id": "1000",
+			"name": "Buxoro",
+			"image": "Buxoro.jpg",
+			"cord_x": "42.3",
+			"cord_y": "62.4",
+			"inventoryStatus": "NOTAVAILABLE",
+			"createdat": "2022-08-29 10:03:56.634"
+		},
+		{
+			"id": "1000",
+			"name": "Toshkent",
+			"image": "Toshkent.jpg",
+			"cord_x": "42.3",
+			"cord_y": "62.4",
+			"inventoryStatus": "NOTAVAILABLE",
+			"createdat": "2022-08-29 10:03:56.634"
+		},
+		{
+			"id": "1000",
+			"name": "Samarqand",
+			"image": "Samarqand.jpg",
+			"cord_x": "42.3",
+			"cord_y": "62.4",
+			"inventoryStatus": "NOTAVAILABLE",
+			"createdat": "2022-08-29 10:03:56.634"
+		}
+	]
+}

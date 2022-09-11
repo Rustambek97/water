@@ -2,7 +2,7 @@
 	<div class="grid">
 		<div class="col-12">
 			<div class="card">
-				<h5>Row Expand</h5>
+				<h5>Log Device</h5>
 				<DataTable :value="products" v-model:expandedRows="expandedRows" dataKey="id" responsiveLayout="scroll">
 					<template #header>
 						<div>

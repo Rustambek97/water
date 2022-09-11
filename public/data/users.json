@@ -1,0 +1,34 @@
+{
+	"data": [
+		{
+			"id": "1000",
+			"email": "bobur11@mail.com",
+			"name": "Bobur11",
+			"createdat": "2022-08-29 05:29:43.944",
+			"login": "bobur11",
+			"password": "12345678s",
+			"phone": "+998904330411",
+			"role": "USER"
+		},
+		{
+			"id": "1001",
+			"email": "bobwur11@mail.com",
+			"name": "Bobur",
+			"createdat": "2022-08-29 05:30:24.566",
+			"login": "bobur",
+			"password": "12345678",
+			"phone": "+998904330422",
+			"role": "ADMIN"
+		},
+		{
+			"id": "1002",
+			"email": "rustambek1216@gmail.com",
+			"name": "Rustam",
+			"createdat": "2022-08-29 05:32:25.546",
+			"login": "Rustambek",
+			"password": "987654321",
+			"phone": "Accessories",
+			"role": "USER"
+		}
+	]
+}

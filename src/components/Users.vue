@@ -22,7 +22,7 @@
 							currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products" responsiveLayout="scroll">
 					<template #header>
 						<div class="flex flex-column md:flex-row md:justify-content-between md:align-items-center">
-							<h5 class="m-0">Manage Products</h5>
+							<h5 class="m-0">Users</h5>
 							<span class="block mt-2 md:mt-0 p-input-icon-left">
                                 <i class="pi pi-search" />
                                 <InputText v-model="filters['global'].value" placeholder="Search..." />
@@ -31,10 +31,10 @@
 					</template>
 
 					<Column selectionMode="multiple" headerStyle="width: 3rem"></Column>
-					<Column field="code" header="Code" :sortable="true" headerStyle="width:14%; min-width:10rem;">
+					<Column field="email" header="Email" :sortable="true" headerStyle="width:14%; min-width:10rem;">
 						<template #body="slotProps">
-							<span class="p-column-title">Code</span>
-							{{slotProps.data.code}}
+							<span class="p-column-title">Email</span>
+							{{slotProps.data.email}}
 						</template>
 					</Column>
 					<Column field="name" header="Name" :sortable="true" headerStyle="width:14%; min-width:10rem;">
@@ -43,34 +43,35 @@
 							{{slotProps.data.name}}
 						</template>
 					</Column>
-					<Column header="Image" headerStyle="width:14%; min-width:10rem;">
+					
+					<Column field="createdat" header="CreatedAt" :sortable="true" headerStyle="width:14%; min-width:8rem;">
 						<template #body="slotProps">
-							<span class="p-column-title">Image</span>
-							<img :src="'images/product/' + slotProps.data.image" :alt="slotProps.data.image" class="shadow-2" width="100" />
+							<span class="p-column-title">CreatedAt</span>
+							{{slotProps.data.createdat}}
 						</template>
 					</Column>
-					<Column field="price" header="Price" :sortable="true" headerStyle="width:14%; min-width:8rem;">
+					<Column field="login" header="Login" :sortable="true" headerStyle="width:14%; min-width:10rem;">
 						<template #body="slotProps">
-							<span class="p-column-title">Price</span>
-							{{formatCurrency(slotProps.data.price)}}
+							<span class="p-column-title">Login</span>
+							{{slotProps.data.login}}
 						</template>
 					</Column>
-					<Column field="category" header="Category" :sortable="true" headerStyle="width:14%; min-width:10rem;">
+					<Column field="password" header="Password" :sortable="true" headerStyle="width:14%; min-width:10rem;">
 						<template #body="slotProps">
-							<span class="p-column-title">Category</span>
-							{{formatCurrency(slotProps.data.category)}}
+							<span class="p-column-title">Password</span>
+							{{slotProps.data.password}}
 						</template>
 					</Column>
-					<Column field="rating" header="Reviews" :sortable="true" headerStyle="width:14%; min-width:10rem;">
+					<Column field="phone" header="Phone" :sortable="true" headerStyle="width:14%; min-width:10rem;">
 						<template #body="slotProps">
-							<span class="p-column-title">Rating</span>
-							<Rating :modelValue="slotProps.data.rating" :readonly="true" :cancel="false" />
+							<span class="p-column-title">Phone</span>
+							{{slotProps.data.phone}}
 						</template>
 					</Column>
-					<Column field="inventoryStatus" header="Status" :sortable="true" headerStyle="width:14%; min-width:10rem;">
+					<Column field="role" header="Role" :sortable="true" headerStyle="width:14%; min-width:10rem;">
 						<template #body="slotProps">
-							<span class="p-column-title">Status</span>
-							<span :class="'product-badge status-' + (slotProps.data.inventoryStatus ? slotProps.data.inventoryStatus.toLowerCase() : '')">{{slotProps.data.inventoryStatus}}</span>
+							<span class="p-column-title">Role</span>
+							{{slotProps.data.role}}
 						</template>
 					</Column>
 					<Column headerStyle="min-width:10rem;">
@@ -203,7 +204,7 @@ export default {
 		this.initFilters();
 	},
 	mounted() {
-		this.productService.getProducts().then(data => this.products = data);
+		this.productService.getUsers().then(data => this.products = data);
 	},
 	methods: {
 		formatCurrency(value) {

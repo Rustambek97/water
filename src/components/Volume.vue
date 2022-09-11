@@ -2,7 +2,7 @@
 	<div class="grid">
 		<div class="col-12">
 			<div class="card">
-				<h5>Row Expand</h5>
+				<h5>Volume</h5>
 				<DataTable :value="products" v-model:expandedRows="expandedRows" dataKey="id" responsiveLayout="scroll">
 					<template #header>
 						<div>
@@ -11,35 +11,22 @@
 						</div>
 					</template>
 					<Column :expander="true" headerStyle="width: 3rem" />
-					<Column field="name" header="Name" :sortable="true">
+					<Column field="name" header="Device Name" :sortable="true">
 						<template #body="slotProps">
 							{{slotProps.data.name}}
 						</template>
 					</Column>
-					<Column header="Image">
+					<Column field="high" header="High" :sortable="true">
 						<template #body="slotProps">
-							<img :src="'images/product/' + slotProps.data.image" :alt="slotProps.data.image" class="shadow-2" width="100" />
+							{{slotProps.data.high}}
 						</template>
 					</Column>
-					<Column field="price" header="Price" :sortable="true">
+					<Column field="volume" header="Volume" :sortable="true">
 						<template #body="slotProps">
-							{{formatCurrency(slotProps.data.price)}}
+							{{slotProps.data.volume}}
 						</template>
 					</Column>
-					<Column field="category" header="Category" :sortable="true">
-					<template #body="slotProps">
-							{{formatCurrency(slotProps.data.category)}}
-						</template></Column>
-					<Column field="rating" header="Reviews" :sortable="true">
-						<template #body="slotProps">
-							<Rating :modelValue="slotProps.data.rating" :readonly="true" :cancel="false" />
-						</template>
-					</Column>
-					<Column field="inventoryStatus" header="Status" :sortable="true">
-						<template #body="slotProps">
-							<span :class="'product-badge status-' + (slotProps.data.inventoryStatus ? slotProps.data.inventoryStatus.toLowerCase() : '')">{{slotProps.data.inventoryStatus}}</span>
-						</template>
-					</Column>
+					
 					<template #expansion="slotProps">
 						<div class="p-3">
 							<h5>Orders for {{slotProps.data.name}}</h5>
