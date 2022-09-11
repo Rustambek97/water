@@ -97,6 +97,12 @@
 							{{slotProps.data.createdat}}
 						</template>
 					</Column>
+					<Column headerStyle="min-width:10rem;">
+						<template #body="slotProps">
+							<Button icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" @click="editProduct(slotProps.data)" />
+							<Button icon="pi pi-trash" class="p-button-rounded p-button-warning mt-2" @click="confirmDeleteProduct(slotProps.data)" />
+						</template>
+					</Column>
 				</DataTable>
 
 				<Dialog v-model:visible="productDialog" :style="{width: '450px'}" header="Product Details" :modal="true" class="p-fluid">
