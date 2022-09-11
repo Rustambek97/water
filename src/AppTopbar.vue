@@ -2,7 +2,7 @@
 	<div class="layout-topbar">
 		<router-link to="/" class="layout-topbar-logo">
 			<img alt="Logo" :src="topbarImage()" />
-			<span style="text-align: center;">Transport cars for tourists in Khiva</span>
+			<span style="text-align: center;">water manage</span>
 		</router-link>
 
 		<button class="p-link layout-menu-button layout-topbar-button" @click="onMenuToggle">
@@ -27,12 +27,6 @@
 					<span>Today's weather</span>
 				</button>
 			</li>
-			<li>
-				<button class="p-link layout-topbar-button">
-					<i class="pi pi-youtube"></i>
-					<span>Watch our tours</span>
-				</button>
-			</li>
 		</ul>
 	</div>
 </template>
@@ -44,9 +38,7 @@ export default {
 			dropdownValues: [
 					{name: 'UZ', code: 'UZ'},
 					{name: 'RU', code: 'RU'},
-					{name: 'ENG', code: 'ENG'},
-					{name: 'FRA', code: 'FRA'},
-					{name: 'GER', code: 'GER'}
+					{name: 'ENG', code: 'ENG'}
 				],
 				dropdownValue: null,
 		}

@@ -9,28 +9,38 @@ const routes = [
         children: [
             {
                 path: '',
-                name: 'dashboard',
-                component: () => import('./components/Dashboard.vue')
+                name: 'device',
+                component: () => import('./components/Device.vue')
             },
             {
-                path: '/formlayout',
-                name: 'formlayout',
-                component: () => import('./components/FloatLabelDemo.vue')
+                path: '/logdevice',
+                name: 'logdevice',
+                component: () => import('./components/Logdevice.vue')
             },
             {
-                path: '/input',
-                name: 'input',
-                component: () => import('./components/FormLayoutDemo.vue')
+                path: '/action',
+                name: 'action',
+                component: () => import('./components/Action.vue')
             },
             {
-                path: '/floatlabel',
-                name: 'floatlabel',
-                component: () => import('./components/InputDemo.vue')
+                path: '/setting',
+                name: 'setting',
+                component: () => import('./components/Setting.vue')
             },
             {
-                path: '/invalidstate',
-                name: 'invalidstate',
-                component: () => import('./components/InvalidStateDemo.vue')
+                path: '/volume',
+                name: 'volume',
+                component: () => import('./components/Volume.vue')
+            },
+            {
+                path: '/regions',
+                name: 'regions',
+                component: () => import('./components/Regions.vue')
+            },
+            {
+                path: '/users',
+                name: 'users',
+                component: () => import('./components/Users.vue')
             },
         ]
     },
